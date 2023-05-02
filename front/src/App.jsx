@@ -1,30 +1,25 @@
-import React from 'react';
-import { useState } from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import SignUpForm from './components/SignUpForm';
 import SignInForm from './components/SignInForm';
+import Chat from './components/Chat';
 
 function App() {
-  const [isSignForm, setIsSignForm] = useState(true);
+  let navigate = useNavigate();
 
-  const changeForm = isSignForm ? 'Sign In' : 'Sign Up';
-  const changeFormText = isSignForm ? 'Already have an account?' : "Don't have an account?";
-
-  function changeSignForm() {
-    setIsSignForm(!isSignForm);
-  }
+  useEffect(() => {
+    if (localStorage.getItem('user')) {
+      return navigate('/sign-up');
+    }
+  }, []);
 
   return (
-    <div className="App">
-      <div className="form">
-        {isSignForm ? <SignUpForm /> : <SignInForm />}
-        <div className="changeForm">
-          <p>{changeFormText}</p>
-          <button onClick={changeSignForm}>{changeForm}</button>
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Chat />} />
+      <Route path="/sign-up" element={<SignUpForm />} />
+      <Route path="/sign-in" element={<SignInForm />} />
+    </Routes>
   );
 }
 
