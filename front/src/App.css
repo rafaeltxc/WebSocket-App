@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,7 +20,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-
+/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -42,57 +44,16 @@ q:before, q:after {
 	content: none;
 }
 
-.App {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 40%;
-  height: 60%;
+.root {
+	font-family: 'Roboto', sans-serif;
 }
 
-.signUpForm {
-  width: 80%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.signInForm {
-  width: 80%;
-  height: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.changeForm {
-  font-size: 15px;
-}
-
-.changeForm > p {
-  color: darkgray;
-  margin-bottom: 15px;
-}
-
-.changeForm > button {
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  color: darkgray;
-}
-
-.changeForm > button:hover {
-  color: black;
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+	color: black !important;
+	border: 2px solid black !important;
 }

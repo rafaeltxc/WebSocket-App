@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "react-app:start": "cd ./front && npm start",
+    "react-app:build": "cd ./front && npm build"
   },
   "keywords": [],
   "author": "",

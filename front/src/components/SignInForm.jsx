@@ -10,6 +10,8 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import styles from '../styles/Form.module.css';
+import ParticlesJs from './Particles';
 
 function Login({ signInSubmit }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,19 +33,27 @@ function Login({ signInSubmit }) {
   }
 
   return (
-    <div>
-      <form onSubmit={signInSubmit} className="signInForm">
+    <div className={styles.root}>
+      <ParticlesJs />
+      <form onSubmit={signInSubmit} className={styles.signIn}>
         <TextField
           id="outlined-basic"
-          className="textField"
+          className={styles.input}
           label="Login"
           variant="outlined"
           type="text"
           value={inputValue.User}
           onChange={userHandler}
+          InputLabelProps={{
+            style: {
+              color: 'black',
+            },
+          }}
         />
-        <FormControl sx={{ m: 1, width: '25ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+        <FormControl sx={{ m: 1, width: '280px' }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password" style={{ color: 'black' }}>
+            Password
+          </InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={showPassword ? 'text' : 'password'}
@@ -54,14 +64,16 @@ function Login({ signInSubmit }) {
                 </IconButton>
               </InputAdornment>
             }
-            className="textField"
             label="Password"
             value={inputValue.Password}
             onChange={passwordHandler}
           />
         </FormControl>
       </form>
-      <Link to={'/sign-up'}>Sign Up</Link>
+      <p className={styles.p}>Don't have an account?</p>
+      <Link to={'/sign-up'} className={styles.anchor}>
+        Sign Up
+      </Link>
     </div>
   );
 }

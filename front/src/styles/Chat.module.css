@@ -1,0 +1,67 @@
+.root {
+  composes: displaySize from "./globals.css";
+  composes: alignmentRow from "./globals.css";
+  background: radial-gradient(rgba(255,255,255,1) 0%, rgba(142,142,142,1) 47%, rgba(0,0,0,1) 100%);
+}
+
+.contactsDiv {
+  width: 30%;
+  height: 100%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+}
+
+.contactsNavbar {
+  width: 100%;
+  height: 15%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.contacts {
+  width: 100%;
+  height: 85%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.messagesDiv {
+  width: 70%;
+  height: 100%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+}
+
+.messagesNavbar {
+  width: 100%;
+  height: 15%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.messages {
+  width: 100%;
+  height: 70%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.messagesInput {
+  width: 100%;
+  height: 15%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+

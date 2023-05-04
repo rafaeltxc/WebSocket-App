@@ -2,6 +2,8 @@ import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import masks from '../utils/masks';
 import { Link } from 'react-router-dom';
+import styles from '../styles/Form.module.css';
+import ParticlesJs from './Particles';
 
 function signUpForm({ SignUpSubmit }) {
   const [inputValue, setInputValue] = useState({
@@ -45,13 +47,14 @@ function signUpForm({ SignUpSubmit }) {
   function passwordConfHandler(event) {
     setInputValue({
       ...inputValue,
-      PasswordConfirmation: event.target.value,
+      PasswordConf: event.target.value,
     });
   }
 
   return (
-    <div>
-      <form onSubmit={SignUpSubmit} className="signUpForm">
+    <div className={styles.root}>
+      <ParticlesJs />
+      <form onSubmit={SignUpSubmit} className={styles.signUp}>
         <TextField
           id="outlined-basic"
           label="Email"
@@ -60,49 +63,90 @@ function signUpForm({ SignUpSubmit }) {
           value={inputValue.Email}
           onChange={emailHandler}
           size="small"
+          className={styles.input}
+          InputLabelProps={{
+            style: {
+              color: 'black',
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
-          className="textField"
           label="Username"
           variant="outlined"
           type="text"
           value={inputValue.Username}
           onChange={usernameHandler}
           size="small"
+          className={styles.input}
+          inputProps={{
+            maxLength: 16,
+          }}
+          InputLabelProps={{
+            style: {
+              color: 'black',
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
-          className="textField"
           label="Phone"
           variant="outlined"
           type="tel"
           value={inputValue.Phone}
           onChange={phoneHandler}
           size="small"
+          className={styles.input}
+          inputProps={{
+            maxLength: 15,
+          }}
+          InputLabelProps={{
+            style: {
+              color: 'black',
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
-          className="textField"
           label="Password"
           variant="outlined"
           type="password"
           value={inputValue.Password}
           onChange={passwordHandler}
           size="small"
+          className={styles.input}
+          inputProps={{
+            minLength: 3,
+          }}
+          InputLabelProps={{
+            style: {
+              color: 'black',
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
-          className="textField"
           label="Password Confirmation"
           variant="outlined"
-          type="text"
+          type="password"
           value={inputValue.PasswordConf}
           onChange={passwordConfHandler}
           size="small"
+          className={styles.input}
+          inputProps={{
+            minLength: 3,
+          }}
+          InputLabelProps={{
+            style: {
+              color: 'black',
+            },
+          }}
         />
       </form>
-      <Link to={'/sign-in'}>Sign In</Link>
+      <p className={styles.p}>Already have an account?</p>
+      <Link to={'/sign-in'} className={styles.anchor}>
+        Sign In
+      </Link>
     </div>
   );
 }
