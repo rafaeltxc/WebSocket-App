@@ -1,11 +1,11 @@
 .root {
   composes: displaySize from "./globals.css";
   composes: alignmentRow from "./globals.css";
-  background: radial-gradient(rgba(255,255,255,1) 0%, rgba(142,142,142,1) 47%, rgba(0,0,0,1) 100%);
+  /* background: radial-gradient(rgba(255,255,255,1) 0%, rgba(142,142,142,1) 47%, rgba(0,0,0,1) 100%); */
 }
 
 .contactsDiv {
-  width: 30%;
+  width: 25%;
   height: 100%;
   composes: alignmentColumn from "./globals.css";
   align-items: center;
@@ -14,24 +14,99 @@
 
 .contactsNavbar {
   width: 100%;
-  height: 15%;
+  height: 12%;
+  composes: alignmentColumn from "./globals.css";
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.contactsInfo {
+  width: 100%;
+  height: 50%;
+  composes: alignmentRow from "./globals.css";
+  align-items: center;
+  border: 1px solid black;
+}
+
+.contactsInfo > p {
+  width: 70%;
+  padding: 0 0 0 15px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.contactsInfoOptions {
+  width: 30%;
+  height: 100%;
+  composes: alignmentRow from "./globals.css";
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid black;
+}
+
+.contactsSearchInput {
+  width: 100%;
+  height: 50%;
   composes: alignmentColumn from "./globals.css";
   align-items: center;
   justify-content: center;
   border: 1px solid black;
+}
+
+.contactsSearchInput > input {
+  width: 70%;
+  height: 25px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .contacts {
   width: 100%;
-  height: 85%;
+  height: 88%;
   composes: alignmentColumn from "./globals.css";
+  border: 1px solid black;
+}
+
+.contact {
+  width: 100%;
+  height: 8%;
+  composes: alignmentRow from "./globals.css";
   align-items: center;
   justify-content: center;
   border: 1px solid black;
 }
 
-.messagesDiv {
+.contactIcon {
+  width: 20%;
+  height: 100%;
+  composes: alignmentRow from "./globals.css";
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.contactUnit {
   width: 70%;
+  height: 90%;
+  composes: alignmentColumn from "./globals.css";
+  justify-content: space-evenly;
+  border: 1px solid black;
+}
+
+.contactName {
+  width: 100%;
+  composes: alignmentRow from "./globals.css";
+  justify-content: space-between;
+}
+
+.contactMessage {
+  width: 100%;
+}
+
+.messagesDiv {
+  width: 75%;
   height: 100%;
   composes: alignmentColumn from "./globals.css";
   align-items: center;
@@ -40,28 +115,87 @@
 
 .messagesNavbar {
   width: 100%;
-  height: 15%;
-  composes: alignmentColumn from "./globals.css";
+  height: 6%;
+  composes: alignmentRow from "./globals.css";
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.messagesInfo {
+  width: 10%;
+  height: 100%;
+  composes: alignmentRow from "./globals.css";
+  align-items: center;
+  padding-left: 30px;
+  border: 1px solid black;
+}
+
+.messagesInfo > p {
+  margin-right: 15px;
+}
+
+.messagesOptions {
+  width: 15%;
+  height: 100%;
+  composes: alignmentRow from "./globals.css";
+  justify-content: space-evenly;
+  align-items: center;
   border: 1px solid black;
 }
 
 .messages {
   width: 100%;
-  height: 70%;
+  height: 88%;
   composes: alignmentColumn from "./globals.css";
+  justify-content: end;
   align-items: center;
-  justify-content: center;
+  overflow-y: scroll;
+  overflow: auto;
+  overflow-x: hidden;
   border: 1px solid black;
+}
+
+.messages > div {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.messages > div > p {
+  background-color: transparent;
+  padding: 5px 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.messageSent {
+  justify-content: end;
+}
+
+.messageSent > p{
+  
+}
+
+.messageReceived {
+  justify-content: baseline;
 }
 
 .messagesInput {
   width: 100%;
-  height: 15%;
-  composes: alignmentColumn from "./globals.css";
+  height: 6%;
+  composes: alignmentRow from "./globals.css";
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   border: 1px solid black;
 }
 
+.messagesInput > input {
+  width: 80%;
+  height: 25px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+}
