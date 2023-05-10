@@ -1,7 +1,6 @@
 .root {
   composes: displaySize from "./globals.css";
   composes: alignmentRow from "./globals.css";
-  /* background: radial-gradient(rgba(255,255,255,1) 0%, rgba(142,142,142,1) 47%, rgba(0,0,0,1) 100%); */
 }
 
 .contactsDiv {
@@ -10,6 +9,7 @@
   composes: alignmentColumn from "./globals.css";
   align-items: center;
   justify-content: center;
+  border-right: 1px solid black;
 }
 
 .contactsNavbar {
@@ -18,7 +18,7 @@
   composes: alignmentColumn from "./globals.css";
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
+  background-color: #a3a3a3;
 }
 
 .contactsInfo {
@@ -26,23 +26,25 @@
   height: 50%;
   composes: alignmentRow from "./globals.css";
   align-items: center;
-  border: 1px solid black;
 }
 
 .contactsInfo > p {
   width: 70%;
   padding: 0 0 0 15px;
+  padding-top: 5px;
   font-size: larger;
   font-weight: bold;
+  color: white;
 }
 
 .contactsInfoOptions {
   width: 30%;
   height: 100%;
   composes: alignmentRow from "./globals.css";
+  padding-top: 5px;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid black;
+  color: white;
 }
 
 .contactsSearchInput {
@@ -51,22 +53,32 @@
   composes: alignmentColumn from "./globals.css";
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1.5%;
+  color: white;
 }
 
 .contactsSearchInput > input {
-  width: 70%;
+  width: 80%;
   height: 25px;
-  background-color: transparent;
-  border: 1px solid black;
-  border-radius: 5px;
+  padding-left: 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: rgb(80, 80, 80);
+  color: white;
 }
 
 .contacts {
   width: 100%;
   height: 88%;
   composes: alignmentColumn from "./globals.css";
-  border: 1px solid black;
+  background-color: #a3a3a3;
+  overflow-y: auto;
+  padding-top: 25px;
+  color: white;
 }
 
 .contact {
@@ -74,31 +86,37 @@
   height: 8%;
   composes: alignmentRow from "./globals.css";
   align-items: center;
-  justify-content: center;
-  border: 1px solid black;
+  justify-content: space-evenly;
+  margin-bottom: 35px;
 }
 
 .contactIcon {
-  width: 20%;
-  height: 100%;
+  width: 40px;
+  height: 40px;
   composes: alignmentRow from "./globals.css";
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
 }
 
 .contactUnit {
   width: 70%;
-  height: 90%;
+  height: 100%;
   composes: alignmentColumn from "./globals.css";
-  justify-content: space-evenly;
-  border: 1px solid black;
+  justify-content: space-between;
+  color: #e7e7e7;
 }
 
 .contactName {
   width: 100%;
   composes: alignmentRow from "./globals.css";
   justify-content: space-between;
+
+}
+
+.contactUsername {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
 }
 
 .contactMessage {
