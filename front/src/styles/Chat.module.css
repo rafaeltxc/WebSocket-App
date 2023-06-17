@@ -6,31 +6,35 @@
 .contactsDiv {
   width: 25%;
   height: 100%;
+  min-height: 700px;
+  min-width: 330px;
   composes: alignmentColumn from "./globals.css";
   align-items: center;
   justify-content: center;
   border-right: 1px solid black;
+  background-color: #505050;
 }
 
 .contactsNavbar {
-  width: 100%;
-  height: 12%;
+  width: 95%;
+  height: 15%;
   composes: alignmentColumn from "./globals.css";
-  align-items: center;
-  justify-content: space-between;
-  background-color: #a3a3a3;
+  background-color: #505050;
 }
 
 .contactsInfo {
+  composes: alignmentRow from "./globals.css";
   width: 100%;
   height: 50%;
-  composes: alignmentRow from "./globals.css";
+  min-height: 50px;
   align-items: center;
+  justify-content: center;
+  padding-left: 7px;
 }
 
 .contactsInfo > p {
   width: 70%;
-  padding: 0 0 0 15px;
+  padding-left: 20px;
   padding-top: 5px;
   font-size: larger;
   font-weight: bold;
@@ -48,17 +52,19 @@
 }
 
 .contactsSearchInput {
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 25px;
   width: 100%;
   height: 50%;
+  min-height: 50px;
   composes: alignmentColumn from "./globals.css";
-  align-items: center;
-  justify-content: center;
 }
 
 .inputIcon {
   position: absolute;
-  left: 1.5%;
-  color: white;
+  padding-left: 5px;
+  color: black;
 }
 
 .contactsSearchInput > input {
@@ -67,15 +73,16 @@
   padding-left: 30px;
   border-radius: 10px;
   font-size: 18px;
-  background-color: rgb(80, 80, 80);
-  color: white;
+  background-color: #a3a3a3;
+  color: black;
 }
 
 .contacts {
-  width: 100%;
-  height: 88%;
+  width: 80%;
+  height: 100%;
+  min-height: 500px;
+  align-items: center;
   composes: alignmentColumn from "./globals.css";
-  background-color: #a3a3a3;
   overflow-y: auto;
   padding-top: 25px;
   color: white;
@@ -83,34 +90,51 @@
 
 .contact {
   width: 100%;
-  height: 8%;
+  height: 55px;
   composes: alignmentRow from "./globals.css";
   align-items: center;
-  justify-content: space-evenly;
-  margin-bottom: 35px;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.contact:hover {
+  background-color: #999999;
+}
+
+.contact:active {
+  background-color: #8a8a8a;
 }
 
 .contactIcon {
   width: 40px;
   height: 40px;
-  composes: alignmentRow from "./globals.css";
-  align-items: center;
-  justify-content: center;
 }
 
 .contactUnit {
-  width: 70%;
-  height: 100%;
-  composes: alignmentColumn from "./globals.css";
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 100%;
+  height: 80%;
+  padding-left: 15px;
   color: #e7e7e7;
+  font-size: 15px;
 }
 
 .contactName {
-  width: 100%;
   composes: alignmentRow from "./globals.css";
   justify-content: space-between;
+  align-items: center;
+  padding-right: 15px;
 
+}
+
+.contactMessage {
+  width: 100%;
 }
 
 .contactUsername {
@@ -119,101 +143,121 @@
   color: white;
 }
 
-.contactMessage {
-  width: 100%;
-}
-
 .messagesDiv {
   width: 75%;
   height: 100%;
+  min-height: 700px;
+  min-width: 640px;
   composes: alignmentColumn from "./globals.css";
   align-items: center;
   justify-content: center;
+  background-color: #505050;
 }
 
 .messagesNavbar {
   width: 100%;
   height: 6%;
+  min-height: 50px;
   composes: alignmentRow from "./globals.css";
   align-items: center;
   justify-content: space-between;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .messagesInfo {
-  width: 10%;
-  height: 100%;
   composes: alignmentRow from "./globals.css";
   align-items: center;
-  padding-left: 30px;
-  border: 1px solid black;
-}
-
-.messagesInfo > p {
-  margin-right: 15px;
+  justify-content: space-between;
+  width: 90px;
+  height: 100%;
+  align-items: center;
+  padding-left: 15px;
 }
 
 .messagesOptions {
-  width: 15%;
+  width: 5%;
   height: 100%;
   composes: alignmentRow from "./globals.css";
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid black;
+}
+
+.messagesIcon {
+  color: white;
 }
 
 .messages {
   width: 100%;
   height: 88%;
   composes: alignmentColumn from "./globals.css";
-  justify-content: end;
   align-items: center;
   overflow-y: scroll;
-  overflow: auto;
-  overflow-x: hidden;
-  border: 1px solid black;
+  background-color: #a3a3a3;
+  padding-top: 15px;
 }
 
 .messages > div {
-  width: 90%;
-  height: 40px;
   display: flex;
-  align-items: center;
-  border: 1px solid black;
-}
-
-.messages > div > p {
-  background-color: transparent;
-  padding: 5px 15px;
-  border: 1px solid black;
-  border-radius: 5px;
+  align-items: flex-end;
+  width: 80%;
+  margin-bottom: 10px;
 }
 
 .messageSent {
   justify-content: end;
 }
 
-.messageSent > p{
-  
+.messageSentP {
+  composes: message from "./globals.css";
+  background-color: white;
+
 }
 
 .messageReceived {
   justify-content: baseline;
 }
 
+.messageReceivedP {
+  composes: message from "./globals.css";
+  color: white;
+  background-color: #505050;
+}
+
 .messagesInput {
   width: 100%;
   height: 6%;
+  min-height: 50px;
   composes: alignmentRow from "./globals.css";
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .messagesInput > input {
   width: 80%;
   height: 25px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #a3a3a3;
+  color: black;
+}
+
+.button {
   background-color: transparent;
-  border: 1px solid black;
-  border-radius: 5px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: #999999;
+}
+
+.button:active {
+  color: #8a8a8a;
+}
+
+input:focus {
+  outline: none;
 }
