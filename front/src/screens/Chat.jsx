@@ -1,14 +1,24 @@
-import styles from '../styles/Chat.module.css';
-import RateReviewOutlinedIcon from '@mui/icons-material/RateReviewOutlined';
-import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import AttachFileIcon from '@mui/icons-material/AttachFile';
-import MicIcon from '@mui/icons-material/Mic';
+import RateReviewOutlinedIcon from "@mui/icons-material/RateReviewOutlined";
+import styles from "../styles/Chat.module.css";
+import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
+import MicIcon from "@mui/icons-material/Mic";
 
-import userDefault from '../images/user-default-profile.png';
+import User from "../components/User/User.jsx";
+import UserOnlyName from "../components/UserOnlyName/UserOnlyName.jsx"
+
+import { useState } from "react";
 
 function Chat() {
+  const [userIcon, setUserIcon] = useState(null);
+  const [filter, setFilter] = useState("");
+
+  function handlerFilter(event) {
+    setFilter(event.target.value);
+  }
+
   return (
     <div className={styles.root}>
       <div className={styles.contactsDiv}>
@@ -26,52 +36,32 @@ function Chat() {
           </div>
           <div className={styles.contactsSearchInput}>
             <SearchOutlinedIcon className={styles.inputIcon} />
-            <input type="text" placeholder="Filter" />
+            <input
+              type="text"
+              placeholder="Filter"
+              value={filter}
+              onChange={(event) => handlerFilter(event)}
+            />
           </div>
         </nav>
         <div className={styles.contacts}>
           {/* CONTACTS EXAMPLE */}
-          <button className={styles.contact}>
-            <img
-              className={styles.contactIcon}
-              src={userDefault}
-              alt="User profile picture"
-            />
-            <div className={styles.contactUnit}>
-              <div className={styles.contactName}>
-                <p className={styles.contactUsername}>user</p>
-                <p>10:00</p>
-              </div>
-              <p className={styles.contactMessage}>message</p>
-            </div>
-          </button>
-          <button className={styles.contact}>
-            <img
-              className={styles.contactIcon}
-              src={userDefault}
-              alt="User profile picture"
-            />
-            <div className={styles.contactUnit}>
-              <div className={styles.contactName}>
-                <p className={styles.contactUsername}>user</p>
-                <p>10:00</p>
-              </div>
-              <p className={styles.contactMessage}>message</p>
-            </div>
-          </button>
+          <User
+            username={"User"}
+            message={"Last Message"}
+            messageTime={"10:00"}
+          />
+          <User
+            username={"User"}
+            message={"Last Message"}
+            messageTime={"10:00"}
+          />
           {/* CONTACTS EXAMPLE */}
         </div>
       </div>
       <div className={styles.messagesDiv}>
         <nav className={styles.messagesNavbar}>
-          <div className={styles.messagesInfo}>
-            <img
-              className={styles.contactIcon}
-              src={userDefault}
-              alt="User profile picture"
-            />
-            <p className={styles.contactUsername}>user</p>
-          </div>
+          <UserOnlyName icon={userIcon} username={"user"} />
           <div className={styles.messagesOptions}>
             <button className={styles.button}>
               <MoreVertOutlinedIcon />
@@ -153,5 +143,5 @@ function Chat() {
     </div>
   );
 }
-
 export default Chat;
+

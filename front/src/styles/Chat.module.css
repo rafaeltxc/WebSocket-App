@@ -88,61 +88,6 @@
   color: white;
 }
 
-.contact {
-  width: 100%;
-  height: 55px;
-  composes: alignmentRow from "./globals.css";
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 25px;
-  background-color: transparent;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.contact:hover {
-  background-color: #999999;
-}
-
-.contact:active {
-  background-color: #8a8a8a;
-}
-
-.contactIcon {
-  width: 40px;
-  height: 40px;
-}
-
-.contactUnit {
-  display: flex;
-  flex-direction: column;
-  text-align: start;
-  width: 100%;
-  height: 80%;
-  padding-left: 15px;
-  color: #e7e7e7;
-  font-size: 15px;
-}
-
-.contactName {
-  composes: alignmentRow from "./globals.css";
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 15px;
-
-}
-
-.contactMessage {
-  width: 100%;
-}
-
-.contactUsername {
-  font-size: 18px;
-  font-weight: 500;
-  color: white;
-}
-
 .messagesDiv {
   width: 75%;
   height: 100%;
@@ -162,16 +107,6 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid black;
-}
-
-.messagesInfo {
-  composes: alignmentRow from "./globals.css";
-  align-items: center;
-  justify-content: space-between;
-  width: 90px;
-  height: 100%;
-  align-items: center;
-  padding-left: 15px;
 }
 
 .messagesOptions {
@@ -210,7 +145,6 @@
 .messageSentP {
   composes: message from "./globals.css";
   background-color: white;
-
 }
 
 .messageReceived {
