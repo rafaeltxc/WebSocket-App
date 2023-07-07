@@ -1,13 +1,18 @@
-import RateReviewOutlinedIcon from "@mui/icons-material/RateReviewOutlined";
 import styles from "../styles/Chat.module.css";
+
+// Icons
+import RateReviewOutlinedIcon from "@mui/icons-material/RateReviewOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MicIcon from "@mui/icons-material/Mic";
 
+// Components
 import User from "../components/User/User.jsx";
 import UserOnlyName from "../components/UserOnlyName/UserOnlyName.jsx"
+import Message from "../components/Message/Message";
+import Icon from "../components/Icon/Icon.jsx";
 
 import { useState } from "react";
 
@@ -26,12 +31,8 @@ function Chat() {
           <div className={styles.contactsInfo}>
             <p>Chats</p>
             <div className={styles.contactsInfoOptions}>
-              <button className={styles.button}>
-                <RateReviewOutlinedIcon />
-              </button>
-              <button className={styles.button}>
-                <MoreVertOutlinedIcon />
-              </button>
+              <Icon icon={<RateReviewOutlinedIcon />} />
+              <Icon icon={<MoreVertOutlinedIcon />} />
             </div>
           </div>
           <div className={styles.contactsSearchInput}>
@@ -53,7 +54,7 @@ function Chat() {
           />
           <User
             username={"User"}
-            message={"Last Message"}
+            message={"Another Last Message"}
             messageTime={"10:00"}
           />
           {/* CONTACTS EXAMPLE */}
@@ -62,82 +63,25 @@ function Chat() {
       <div className={styles.messagesDiv}>
         <nav className={styles.messagesNavbar}>
           <UserOnlyName icon={userIcon} username={"user"} />
-          <div className={styles.messagesOptions}>
-            <button className={styles.button}>
-              <MoreVertOutlinedIcon />
-            </button>
-          </div>
+          <Icon icon={<MoreVertOutlinedIcon />} />
         </nav>
         <div className={styles.messages}>
           {/* // Messages Examples */}
-          <div className={styles.messageSent}>
-            <div className={styles.messageSentP}>
-              <p>
-                asdfasdfaasdasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasdasdasdasdsdf
-              </p>
-            </div>
-          </div>
-          <div className={styles.messageSent}>
-            <div className={styles.messageSentP}>
-              <p>asdfasdfasdfdfasdf</p>
-            </div>
-          </div>
-          <div className={styles.messageReceived}>
-            <div className={styles.messageReceivedP}>
-              <p>asdfasdfasdsadffasdfasdfasdfasdfafsdfasdfasasdfasdfasdff</p>
-            </div>
-          </div>
-          <div className={styles.messageSent}>
-            <div className={styles.messageSentP}>
-              <p>asdfasdfasdf</p>
-            </div>
-          </div>
-          <div className={styles.messageReceived}>
-            <div className={styles.messageReceivedP}>
-              <p>asdfasdfasdf</p>
-            </div>
-          </div>
-          <div className={styles.messageSent}>
-            <div className={styles.messageSentP}>
-              <p>
-                asdfasdfaasdasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasdasdasdasdsdf
-              </p>
-            </div>
-          </div>
-          <div className={styles.messageSent}>
-            <div className={styles.messageSentP}>
-              <p>asdfasdfasdfdfasdf</p>
-            </div>
-          </div>
-          <div className={styles.messageReceived}>
-            <div className={styles.messageReceivedP}>
-              <p>asdfasdfasdsadffasdfasdfasdfasdfafsdfasdfasasdfasdfasdff</p>
-            </div>
-          </div>
-          <div className={styles.messageSent}>
-            <div className={styles.messageSentP}>
-              <p>asdfasdfasdf</p>
-            </div>
-          </div>
-          <div className={styles.messageReceived}>
-            <div className={styles.messageReceivedP}>
-              <p>asdfasdfasdf</p>
-            </div>
-          </div>
+          <Message message={"asd"} received={true} />
+          <Message message={"asd"} received={true} />
+          <Message message={"asd"} received={false} />
+          <Message message={"asd"} received={true} />
+          <Message message={"asd"} received={false} />
+          <Message message={"asd"} received={false} />
+          <Message message={"asd"} received={true} />
           {/* // Messages Examples */}
         </div>
         <div className={styles.messagesInput}>
-          <button className={styles.button}>
-            <SentimentSatisfiedAltIcon />
-          </button>
-          <button className={styles.button}>
-            <AttachFileIcon />
-          </button>
+          <Icon icon={<SentimentSatisfiedAltIcon />} />
+          <Icon icon={<AttachFileIcon />} />
 
           <input type="text" placeholder="Message" />
-          <button className={styles.button}>
-            <MicIcon />
-          </button>
+          <Icon icon={<MicIcon />} />
         </div>
       </div>
     </div>
